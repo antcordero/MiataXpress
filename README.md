@@ -1,7 +1,7 @@
-<h1>Memoria del proyecto fin de evaluación de Lenguajes de Marcas - 1º DAW</h1>
+<h1>Memoria del proyecto</h1>
 <h2>MiataXpress Web</h2>
 <p>Enlaces directo a web navegable:</p>
-- <a href="https://antoniocorderomolina.github.io/MiataXpress/miataxpress.html">Web navegable del proyecto</a>
+- <a href="https://antcordero.github.io/MiataXpress/miataxpress.html">Web navegable del proyecto</a>
 <h2>Índice</h2>
 <ul>
   <li><a href="#introduccion">Introducción</a></li>
@@ -12,8 +12,7 @@
 
 <h2 id="introduccion">Introducción</h2>
 <p>Trabajo realizado por: Antonio Cordero Molina</p>
-<p>Proyecto de web desde cero de 1ª evaluación del módulo Lenguajes de Marcas</p>
-<p>Diciembre de 2023</p>
+<p>Enero de 2024</p>
 <p>Licencia CC-BY</p>
 
 <h2 id="motivacion">Motivación</h2>
