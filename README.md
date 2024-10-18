@@ -1,7 +1,7 @@
 <h1>Memoria del proyecto</h1>
 <h2>MiataXpress Web</h2>
 <p>Enlaces directo a web navegable:</p>
-- <a href="https://antcordero.github.io/MiataXpress/miataxpress.html">Web navegable del proyecto</a>
+- <a href="https://antcordero.github.io/MiataXpress/miataxpress.html" target="_blank">Web navegable del proyecto</a>
 <h2>Índice</h2>
 <ul>
   <li><a href="#introduccion">Introducción</a></li>
