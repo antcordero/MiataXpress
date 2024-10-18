@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MiataXpress Club</title>
+    <link rel="shortcut icon" href="./img/logos/miataxpress_favicon.png" type="image/x-icon"></link>
+
+    <link rel="stylesheet" href="./css/miataxpress.css"/>
+    <!-- Arrow Function Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body>
+
+    <!--###### NAVBAR ######-->
+
+    <!-- Arrow function -->
+    <a href="#"><i class="fa fa-arrow-circle-up"></i></a>
+
+    <nav> <!-- nav bar style inspired from @midudev JS Tutorial (Youtube) -->
+        <div class="navbar">
+            <div class="container">
+                <nav class="site-navbar">
+                    <a href="#" class="site-name">MiataXpress</a>
+            
+                    <!-- menu/nav -->
+                    <ul>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#cup">MiataXpress Cup</a></li>
+                        <div class="dropdown"> <!--Dropdown Button from W3School-->
+                            <button class="dropbtn" href="#guides">Manuales
+                            <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                            <a href="#guides">NA</a>
+                            <a href="#guides">NB</a>
+                            <a href="#guides">NC</a>
+                            <a href="#guides">ND</a>
+                            </div>
+                        </div>
+                    <li><a href="#contact">Contacto</a></li>
+                    </ul>
+            
+                    <!-- nav-toggler for mobile only -->
+                    <button class="nav-toggler">
+                    <span></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </nav>
+
+    <!--###### HERO SECTION ######-->
+    <section id="hero">
+        <a  href="#aboutUs"><button class="knowmore">CONÓCENOS</button></a>
+        <a  href="#contact"><button class="joinus">ÚNETE</button></a>
+    </section>
+
+    <div id="wrapper">
+        
+        <!--###### 1st SECTION ABOUT US ######-->
+        <section id="aboutUs">
+                <h2>¿Quiénes somos?</h2>
+                    <p>MiataXpress lleva desde 2018 y es para todo aquel que disfrute de su MX5 y busca compañeros de ruta para descubrir y disfrutar nuevos parajes, experiencias y conocimientos. Si estás en Andalucía, podrás unirte a uno de nuestros muchos eventos cada mes y vivir la experiencia por ti mismo con tu MX5. Si no, esperamos que disfrutes de las fotos y videos que preparamos para ti.</p>
+                    
+                    <p>Para nosotros, MiataXpress se ha convertido en una forma de vida y por ello queremos compartirlo contigo mediante esta nueva plataforma. Aquí encontrarás manuales, fotos, videos y productos para ti y tu MX5.</p>
+        </section>
+        
+        <!--###### 2ND SECTION GALLERY from W3Schools ######-->
+        <section id="gallery">
+            <h2>Galería</h2>
+                <p>¡Consigue tus fotos en nuestra galería!</p>
+        
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                        <img src="./img/photos/IMG_20200224_102308_879.jpg" style="width:100%">
+                    <div class="text">
+                        Ruta anual a Sierra Nevada
+                    </div>
+                </div>
+            
+                <div class="mySlides fade">
+                        <img src="./img/photos/MiataXpress_Nacional_MX5_Malaga_2023_Viernes_ADiaz-150.jpg" style="width:100%">
+                    <div class="text">
+                        Circuito Vemasur - Córdoba
+                    </div>
+                </div>
+            
+                <div class="mySlides fade">
+                        <img src="./img/photos/MiataXpress_Nacional_MX5_Malaga_2022_Sabado_Publico-68.jpg" style="width:100%">
+                    <div class="text">
+                        Concentración Mensual MX5 Sur
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                        <img src="./img/photos/IMG_6302.jpg" style="width:100%">
+                    <div class="text">
+                        Ruta Almería
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                        <img src="./img/photos/HSC_3018.jpg" style="width:100%">
+                    <div class="text">
+                        Concentración Mensual TrepaOlla
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                        <img src="./img/photos/MiataXpress_MiataSunday_Enero_2022-42.jpg" style="width:100%">
+                    <div class="text">
+                        Quedada Modified & Stance JDM
+                    </div>
+                </div>
+            
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </section>
+
+        <!--###### 3RD SECTION CUP ######-->
+        <section id="cup">
+            <div class="grid-2">
+                <div class="col-2">
+                    <h1 class="tittle">MiataXpress Cup</h1>
+                    <p>Sigue cada jornada el ranking en la liga MiataXpress Cup Time Attack & Drift, donde los miembros compiten entre ellos por los mejores tiempos en circuito</p>
+                    <a href="" class="link-button">
+                        <button type="button">Ranking</button>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <div class="container">
+                        <img src="./img/photos/IMG_1513.jpg" alt="Foto mx5 nb1 Circuito Drift Vemasur, Córdoba" class="image" style="width:100%">
+                        <div class="middle">
+                            <div class="text">
+                                <button type="button"><a href="" class="link-button">GO!</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--###### 4TH SECTION GUIDES ######-->
+        <section id="guides">
+            <div class="grid-2">
+                <div class="col-2">
+                    <div class="container">
+                        <img src="./img/photos/DSC3184.jpg" alt="Foto mx5 vano motor" class="image" style="width:100%">
+                        <div class="middle">
+                            <div class="text">
+                                <button type="button"><a href="" class="link-button">GO!</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <h1 class="tittle">Manuales y tutoriales DIY</h1>
+                    <p>Encuentra todos los manuales de fábrica, tutoriales y los mejores los materiales para cuidar, mantener y preparar tu MX5</p>
+                    <a href="" class="link-button">
+                        <button type="button">Tutoriales</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--###### 5TH SECTION GRID-4 CARDS - MODEL GENERATIONS ######-->
+        <section class="models">
+            <div class="finaltextsection">
+                <h2>Distintas Generaciones</h2>
+                <div class="grid-4">
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="wrapper">
+                              <img src="./img/edits/NA-card-cover.png" class="cover-image" />
+                            </div>
+                            <img src="./img/edits/Mazda-MX-5-Miata-PNG-HD-Isolated.png" class="character" />
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="wrapper">
+                              <img src="./img/edits/NB-card-cover.png" class="cover-image" />
+                            </div>
+                            <img src="./img/edits/MX5-NB.png" class="character" />
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="wrapper">
+                              <img src="./img/edits/NC-card-cover.png" class="cover-image" />
+                            </div>
+                            <img src="./img/edits/MX5-NCpng.png" class="character" />
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="wrapper">
+                              <img src="./img/edits/ND-card-cover.png" class="cover-image" />
+                            </div>
+                            <img src="./img/edits/Mazda-MX-5-Miata-PNG-Clipart.png" class="character" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
+    <!--###### FOOTER ######-->
+    <footer class="footer">
+        <div class="footer-logo">
+            <div class="footer-logo">
+                <a href="miataxpress.html"><img src="./img/logos/miataxpress_lowlogo_white.svg" alt="MiataXpress Logo"></a>
+            </div>
+            <div class="grid-3d">   
+                <div class="footer-social">
+                    <div class="footer-social-pcresponsive">
+                        <p>Síguenos</p>
+                        <a href="https://www.youtube.com/channel/UCM5nRG0Tquzv70ANFslxqaw" target="_blank" class="youtubeChannel">
+                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/miataxpress/" target="_blank" class="instagramAccount">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>  
+  
+                <div class="widget" id="contact">
+                    <div class="footer-widget">
+                        <div class="footer-widget-pcresponsive">
+                            <div class="footer-widget-heading">
+                                <h3>Apúntate y ven</h3>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#contact"> <!--- email form from W3Schools -->
+                                    <input type="text" placeholder="Email Address">
+                                    <button><i class="fa fa-send"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="copyright-area">
+            <div class="col-5">
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="#gallery">Galería</a></li>
+                        <li><a href="#cup">MiataXpress Cup</a></li>
+                        <li><a href="#guides">Manuales</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-4">
+                
+                    <!-- Modal Box from W3Schools -->
+                    <!-- Trigger/Open The Modal -->
+                    <h3 id="myBtn">| Créditos |</h3>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <div class="copyright-text">
+                                <p>Copyright &copy; 2023, All Right Reserved <a href="#">MiataXpress</a></p>
+                                <div class="mentions">
+                                    <p>Fotografos: A. Díaz <a href="https://www.instagram.com/adiazfotos/?img_index=1" target="_blank">@adiazfotos</a> | Lourdes Lelu <a href="https://www.instagram.com/lule_view/?img_index=1" target="_blank">@luleview</a> | Rafael Sánchez <a href="https://www.instagram.com/lule_view/?img_index=1" target="_blank">@rsphoto.eu</a>
+                                    <p>Editor: <a href="https://github.com/AntonioCorderoMolina" target="_blank">Antonio Cordero</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+
+
+    <!-- js script needed here -->
+    <script src="./js/miataxpressFunctionsjs.js"></script>
+
+</body>
+</html>

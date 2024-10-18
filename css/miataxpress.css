@@ -1,0 +1,1463 @@
+/**********************************************************/
+/*          Style sheet for MiataXpress website           */
+/*          author: Antonio Cordero Molina                */
+/*          version: 2.0                                  */
+/*          comments: class project 2023-24               */
+/**********************************************************/
+
+
+/*******************************## COLOURS ##**********************************/
+
+/*
+    body: #f5f5f5 / rgb(245,245,245);
+    #101010 / rgb(16, 16, 16);
+    buttons: #990505 /  rgb(153, 5, 5) // #800928 / rgb(128, 9, 40);
+*/
+
+/********************************## FONTS ##***********************************/
+
+@font-face {
+    font-family: text;
+    src: url(../font/ITCAvantGardeStd-MdObl.otf);
+}
+
+@font-face {
+    font-family: titles;
+    src: url(../font/QueensidesMedium-x30zV.ttf);
+}
+
+/*######################### GENERAL LAYOUT STYLE ##############################*/
+/*############################# MOBILE FIRST ##################################*/
+
+*{
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    font-family: text;
+    font-size: 1em;
+    width: 100;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0px -25px;
+    padding: 0 15px;
+  }
+
+#wrapper {
+    background-color: #f5f5f5;
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 5%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*#############################################################################*/
+/*################################ NAVBAR #####################################*/
+/********** nav bar style inspired from @midudev JS Tutorial (Youtube) *********/
+
+/***** NAVBAR TOGGLER *****/
+
+.nav-toggler {
+    font-family: titles;
+    border: 3px solid #990505;
+    padding: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    height: 39px;
+    display: none;
+}
+.nav-toggler span, 
+.nav-toggler span:before, 
+.nav-toggler span:after {
+    width: 28px;
+    height: 3px;
+    background-color: #990505;
+    display: block;
+    transition: .3s;
+}
+.nav-toggler span:before {
+    content: '';
+    transform: translateY(-9px);
+}
+.nav-toggler span:after {
+    content: '';
+    transform: translateY(6px);
+}
+.nav-toggler.toggler-open span {
+    background-color: transparent;
+}
+.nav-toggler.toggler-open span:before {
+    transform: translateY(0px) rotate(45deg);
+}
+.nav-toggler.toggler-open span:after {
+    transform: translateY(-3px) rotate(-45deg);
+}
+
+/***** NAVBAR TOGGLER ENDS *****/
+
+nav  {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    opacity: 0.95;
+    font-family: titles;
+    font-weight: bold;
+}
+
+/***** DROPDOWN BUTTON STYLE *****/
+
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Style the dropdown button to fit inside the topnav */
+  .dropdown .dropbtn {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    color: #f5f5f5;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin-top: 0;
+  }
+
+  /* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    font-family: titles;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 129px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+  
+  /* Style the links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #990505;
+    color: #f5f5f5;
+  }
+  
+  /* Add a colour background to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #800928;
+    color: #f5f5f5;
+  }
+  
+  /* Show the dropdown menu when the user moves the mouse over the dropdown button */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+/***** DROPDOWN BUTTON STYLE ENDS *****/
+
+.site-name {
+    font-family: titles;
+    font-style: italic;
+}
+  
+@media screen and (max-width: 850px) {
+
+    .container {
+        max-width: 720px;
+    }
+    
+    .nav-toggler{
+        display: block;
+    }
+
+    .site-navbar {
+        min-height: 60px;
+        font-family: titles;  
+    }
+
+    .site-navbar ul {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 60px);
+        left: 0;
+        top: 60px;
+        flex-direction: column;
+        align-items: center;
+        border-top: 2px solid #990505;
+        background-color: #101010;
+        max-height: 0;
+        overflow: hidden;
+        transition: .3s;
+    }
+    .site-navbar ul li {
+        width: 100%;
+        text-align: center;
+    }
+    .site-navbar ul li a {
+        padding: 25px;
+    }
+    .site-navbar ul li a:hover {
+        background-color: #990505;
+    }
+    .site-navbar ul.open {
+        max-height: 100vh;
+        overflow: visible;
+    }
+
+}
+
+/***** ARROW FUNCTION STYLE *****/
+
+.fa-arrow-circle-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5em !important;
+    z-index: 98;
+}
+
+a .fa-arrow-circle-up {
+    color: #800928;
+}
+
+/*#############################################################################*/
+/*############################# HERO SECTION ##################################*/
+
+#hero {
+    background-image: url(../img/edits/hero_section_mobile.png);
+    height: 85vh;
+    background-size: cover;
+    background-position: center;  
+}
+
+.knowmore {
+    background-color: #990505;
+    color: #f5f5f5;
+    font-family: titles;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border: 1px solid #f5f5f5;
+    border-radius: 10px;
+    position: absolute;
+    top: 85%;
+    left: 25%;
+    transform: translate(-50%,-50%);
+}
+
+.joinus {
+    background-color: #990505;
+    color: #f5f5f5;
+    font-family: titles;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border: 1px solid #f5f5f5;
+    border-radius: 10px;
+    position: absolute;
+    top: 85%;
+    left: 75%;
+    transform: translate(-50%,-50%) ;
+}
+
+.knowmore:hover {
+    background-color: #800928;
+}
+
+.joinus:hover {
+    background-color: #800928;
+}
+
+/*#############################################################################*/
+/*################################ SECTIONS ###################################*/
+
+/*############################# GENERAL STYLE #################################*/
+
+.textsection {
+    flex: 1;
+    padding: 10%;
+}
+
+h2 {
+    font-family: titles;
+    font-size: 2em;
+    color: #800928;
+    padding-bottom: 5%;
+    text-align: center;
+} 
+
+p {
+    font-family: text;
+    color: #101010;
+    text-align:justify;
+}
+
+/*############################ SECTION 1 ACCORDION ###########################*/
+
+#aboutUs h2 {
+    font-family: titles;
+    color: #800928;
+    text-align: center;
+    padding-bottom: 5%;
+    width: 100%;
+}
+
+#aboutUs p {
+    font-family: text;
+    color: #101010;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+
+/*############################ SECTION 2 GALLERY #############################*/
+/********************* from FreeFrontend.com/css-carousels ********************/   
+
+#gallery{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#gallery h2 {
+    font-family: titles;
+    color:#800928;
+    text-align: center;
+}
+
+#gallery p {
+    font-family: text;
+    text-align: center;
+    font-size: 1.2em;
+    color:#101010;
+    padding-bottom: 5%;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    padding: auto;
+}
+  
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add background color with a little bit see-through */
+    .prev:hover, .next:hover {
+    background-color: rgb(130, 10, 42, 0.5);
+}
+
+/* Caption text */
+.text {
+    color: #f5f5f5;
+    background-color: rgb(130, 10, 42, 0.3);
+    font-size: 0.8em;
+    font-weight:800 ;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: right;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #800928;
+    border-radius: 50%;
+    display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #990505;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/*################################ SECTION 3 #################################*/
+
+
+#cup {
+    padding: 5%;
+    margin-bottom: 5px;
+}
+
+#cup h1 {
+    font-family: titles;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.col-2 {
+    padding: 4%;
+    color: #800928;
+}
+.col-2 .title {
+    font-family: titles;
+}
+
+.link-button {
+    text-decoration: none;
+}
+
+.link-button button {
+    font-family: text;
+    background-color: #800928;
+    color: #f5f5f5;
+    padding: 6px 10px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 31%;
+}
+
+.link-button button:hover {
+    background-color: #990505;
+    border: 2px solid #101010;
+}
+
+/******* Overlay Effect from W3Schools *********/
+
+#cup .container {
+    position: relative;
+    width: 100%;
+    margin-left: 0%; 
+}
+
+#cup .image {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+  
+.middle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #800928;
+}
+
+#cup .container:hover .middle {
+    opacity: 0.9;
+}
+  
+#cup .text {
+    color: #f5f5f5;
+    font-family: titles;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+#cup .text button {
+    font-family: text;
+    background-color: #f5f5f5;
+    color: #800928;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transform: translate(0%,150%);
+    width: 7em;
+}
+#cup .text a{
+    text-decoration: none;
+}
+
+/******* Overlay Effect from W3Schools  ENDS *********/
+
+/*################################ SECTION 4 #################################*/
+
+#guides {
+    padding: 5%;
+    margin-bottom: 5px;
+}
+
+#guides h1 {
+    font-family: titles;
+}
+
+.link-button {
+    text-decoration: none;
+}
+
+.link-button button {
+    font-family: text;
+    background-color: #800928;
+    color: #f5f5f5;
+    padding: 6px 10px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 31%;
+}
+
+.link-button button:hover {
+    background-color: #990505;
+    border: 2px solid #101010;
+}
+
+/******* Overlay Effect from W3Schools *********/
+
+#guides .container {
+    position: relative;
+    width: 100%; 
+    margin-left: 0%;
+}
+
+#guides .image {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+  
+.middle-guides {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #800928;
+}
+
+#guides .container:hover .middle {
+    opacity: 0.9;
+}
+  
+#guides .text {
+    color: #f5f5f5;
+    font-family: titles;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+#guides .text button {
+    font-family: text;
+    background-color: #f5f5f5;
+    color: #800928;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transform: translate(0%,150%);
+    width: 7em;
+}
+#guides .text a{
+    text-decoration: none;
+}
+
+/******* Overlay Effect from W3Schools  ENDS *********/
+
+/*############################ SECTION 5 GRID-4 ##############################*/
+
+.finaltextsection {
+    margin-top: 10%;
+}
+
+.finaltextsection h2 {
+    font-family: titles;
+    font-size: 2em;
+    color: #800928;
+    padding-bottom: 5%;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
+    gap: 10px;
+}
+
+:root {
+    --card-height: 300px;
+    --card-width: calc(var(--card-height) / 1.5);
+}
+
+.card {
+    width: var(--card-width);
+    height: var(--card-height);
+    position: relative;
+    display: flex;
+    grid-template-columns: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 30px;
+    perspective: 2500px;
+    background: #c5c5c5;
+}
+  
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+  
+.card:hover .wrapper {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+  
+.wrapper::before, .wrapper::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+}
+  
+.wrapper::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(
+        to top,
+        transparent 46%,
+        rgba(12, 13, 19, 0.5) 68%,
+        rgba(12, 13, 19) 97%
+    );
+}
+  
+.wrapper::after {
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 46%,
+        rgba(12, 13, 19, 0.5) 68%,
+        rgba(12, 13, 19) 97%
+    );
+}
+  
+.card:hover .wrapper::before, .wrapper::after {
+    opacity: 1;
+}
+  
+.card:hover .wrapper::after {
+    height: 120px;
+}
+  
+.character {
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+  
+.card:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+}
+  
+
+/*#############################################################################*/
+/*################################# FOOTER ####################################*/
+
+.footer {
+  background: #101010;
+  position: relative;
+}
+
+.footer-content {
+    border-bottom: 1px solid #101010;
+}
+
+.footer-logo {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+.footer-logo img {
+    display: inline-block;
+    width: 300px;
+    padding-top: 5%;
+    position: relative;
+}
+
+/***** GRID FOOTER CONTENT *****/
+
+.grid-3d {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.footer-social p {
+    font-family: titles;
+    color: #f5f5f5;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    position: relative;
+}
+.footer-social p::before {
+    content: "";
+    position: absolute;
+    bottom: -21px;
+    height: 2px;
+    width: 150px;
+    background: #990505;
+}
+
+.footer-social a {
+    text-decoration: none;
+    color: #990505;
+}
+
+.footer-social a:hover {
+    text-decoration: underline;
+}
+
+.footer-social .fa {
+    font-size: 3em;
+    padding: 10px;
+}
+
+.footer-widget-heading h3 {
+    font-family: titles;
+    color: #f5f5f5;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 150px;
+  background: #990505;
+}
+
+/***** email form from W3School *****/
+
+.footer-widget  {
+    padding-right: 20px;
+}
+
+.subscribe-form {
+    position: relative;
+    overflow: hidden;
+    padding-right: 10px;
+}
+.subscribe-form input {
+    width: 100%;
+    padding: 14px 28px;
+    background: #101010;
+    border: 1px solid #990505;
+    color: #990505;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #800928;
+    padding: 13px 20px;
+    border: 1px solid #800928;
+    top: 0;
+    padding-right: 10px;
+}
+.subscribe-form button i {
+    color: #f5f5f5;
+    font-size: 22px;
+    transform: rotate(-6deg);
+    padding-right: 10px;
+}
+
+/***** email form from W3School ENDS *****/
+
+/***** GRID FOOTER CONTENT ENDS *****/
+
+/***** COPYRIGHT AREA *****/
+
+.copyright-area {
+    border-top: 2px solid #800928;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.copyright-text p {
+    font-family: text;
+    text-align: center;
+    font-size: 0.8em;
+    color: #101010
+}
+.copyright-text a {
+    color: #990505;
+}
+
+.col-4 {
+    font-size: 0.85em;
+    padding-top: 10px;
+}
+
+.col-4 .mentions {
+    padding-top: 5px;
+}
+
+.col-4, .col-5 {
+  text-align: center;
+}
+
+.footer-menu {
+  width: 100%;
+}
+
+.footer-menu ul {
+  padding: 0;
+  list-style: none;
+}
+
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.footer-menu li:hover a {
+  color: #990505;
+  text-decoration: underline;
+}
+
+.footer-menu li a {
+  font-size: 14px;
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+/****** CREDITS *******/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    color: #f5f5f5;
+    font-family: text;
+  }
+
+  #myBtn{
+    cursor:pointer;
+    color: #f5f5f5;
+    font-family: titles;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #f5f5f5;
+    margin: 15% auto; /* 15% from the top and centered */
+    margin-top: 50%;
+    padding: 20px;
+    border: 1px solid #800928;
+    width: 80%; /* Could be more or less, depending on screen size */
+    font-family: text;
+  }
+
+  .modal-content p {
+    padding-top: 15px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #990505;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #101010;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /****** CREDITS ENDS *******/
+
+/***** COPYRIGHT AREA ENDS *****/
+
+/*#############################################################################*/
+/*############################### RESPONSIVE ##################################*/
+/*###############################   FOR PC   ##################################*/
+
+@media screen and (width>850px) {
+    #wrapper {
+        background-color: #f5f5f5;
+        width: 100%;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 10%;
+    }
+}
+
+/*########################### RESPONSIVE PC NAVBAR ###########################*/
+
+@media screen and (width>850px) {
+    .dropdown .dropbtn {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: inherit;
+        border: none;
+        outline: none;
+        color: #f5f5f5;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin-top: 5px;
+    }
+}
+
+nav  {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    opacity: 1;
+}
+
+.navbar {
+    background: #101010;
+    border-bottom: 2px solid #990505;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.site-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 17%;
+}
+a.site-name {
+    font-size: 2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    /*margin-right: 45%;*/
+}
+
+.site-navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+.site-navbar ul li a {
+    color: #fff;
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.site-navbar ul li a:hover {
+    background: #990505;
+}
+
+/*####################### RESPONISVE PC HERO SECTION #########################*/
+
+@media screen and (width>850px) {
+
+    #hero {
+        background-image: url(../img/edits/hero_section_widescreen.png);
+        height: 100vh;
+        background-size: cover;
+        background-position: center;  
+    }
+
+    .knowmore {
+        background-color: #990505;
+        color: #f5f5f5;
+        font-family: titles;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 10px;
+        position: absolute;
+        top: 31%;
+        left: 25%;
+        transform: translate(-50%,-50%);
+    }
+
+    .joinus {
+        background-color: #990505;
+        color: #f5f5f5;
+        font-family: titles;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 10px;
+        position: absolute;
+        top: 31%;
+        left: 75%;
+        transform: translate(-50%,-50%) ;
+    }
+
+    .knowmore:hover {
+        background-color: #800928;
+    }
+
+    .joinus:hover {
+        background-color: #800928;
+    }
+}
+
+/*######################### RESPONSIVE PC SECTIONS ############################*/
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+    }
+
+    .textsection, .image {
+        flex: 1;
+    }
+
+    .textsection, .image img {
+        width: 100%;
+    }
+}
+
+/*###### RESPONSIVE PC 1st SECTION ABOUT US ##########*/
+
+@media screen and (width>850px) {
+    #aboutUs {
+        width: 60%;
+        text-align: center;
+    }
+    #aboutUs h2 {
+        font-family: titles;
+        color: #800928;
+        text-align: center;
+        padding-bottom: 5%;
+    }
+
+    #aboutUs p {
+        font-family: text;
+        color: #101010;
+        text-align: center;
+        padding-bottom: 5%;
+    }
+}
+
+/*###### RESPONSIVE PC 2nd SECTION GALLERY ##########*/
+
+@media screen and (width>850px) {
+    .slideshow-container {
+        max-width: 80%;
+        position: relative;
+        margin: auto;
+        padding: auto;
+    }
+    .text {
+        color: #f5f5f5;
+        background-color: rgb(130, 10, 42, 0.3);
+        font-size: 1em;
+        font-weight:800 ;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: right;
+    }
+}  
+
+/*###### RESPONSIVE PC 3rd SECTION CUP ##########*/
+
+@media only screen and (width>850px) {
+    .grid-2 {
+        grid-template-columns: 50% 50%;
+    }
+    .grid-3d {
+        display: grid;
+        grid-template-columns: 25% 25% 50%;
+    }
+    .grid-4 {
+        grid-template-columns: auto auto auto auto; 
+    }
+
+}
+
+/*###### RESPONSIVE PC 5th SECTION GRID-4 CARDS MODEL GENERATIONS #######*/
+
+@media only screen and (width>650px) {
+    .grid-4 {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (width< 768px) {
+    .grid-4 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (width>850px) {
+    
+    :root {
+        --card-height: 400px;
+        --card-width: calc(var(--card-height) / 1.5);
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    #gallery p,
+    #cup .grid-2 .col-2 p,
+    #guides .grid-2 .col-2 p {
+      text-align: center; /* Alinea los párrafos en el centro */
+    }
+  
+    #imgCupSection,
+    #imgGuidesSection {
+      width: 100%; /* Hacer que las imágenes ocupen el 100% del ancho de la pantalla */
+    }
+}
+
+/*####################### RESPONISVE PC FOOTER #########################*/
+
+@media screen and (width>850px) {
+
+    .footer {
+        background-image: url(../img/edits/miataxpress_footer.png);
+        background-size: cover;
+        background-position: center;
+        height: 80vh; 
+    }
+    .footer-logo img {
+        visibility: hidden;
+    }
+    
+    /***** GRID FOOTER CONTENT *****/
+    
+    .grid-3d {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        z-index: 99;
+    }
+    
+    .footer-social-pcresponsive {
+        position: absolute;
+        top: 61%;
+        left: 16%;
+    }
+
+    .footer-social p {
+        font-family: titles;
+        color: #f5f5f5;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+    .footer-social p::before {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        height: 2px;
+        width: 150px;
+        background: #990505;
+    }
+    .footer-social a {
+        text-decoration: none;
+        color: #990505;
+    }
+    .footer-social a:hover {
+        text-decoration: underline;
+    }
+    
+    .footer-widget-pcresponsive{
+        position: absolute;
+        top: 68%;
+        right: 5%;
+        transform: translate(-50%,-50%) ;
+    }
+
+    .footer-widget-heading h3 {
+        font-family: titles;
+        color: #f5f5f5;
+        font-weight: 600;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    .footer-widget-heading h3::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -15px;
+      height: 2px;
+      width: 150px;
+      background: #990505;
+    }
+    
+    /***** email form from W3School *****/
+    
+    .footer-widget  {
+        padding-right: 20px;
+    }
+    
+    .subscribe-form {
+        position: relative;
+        overflow: hidden;
+        padding-right: 10px;
+    }
+    .subscribe-form input {
+        width: 100%;
+        padding: 14px 28px;
+        background: #101010;
+        border: 1px solid #990505;
+        color: #990505;
+    }
+    .subscribe-form button {
+        position: absolute;
+        right: 0;
+        background: #800928;
+        padding: 13px 20px;
+        border: 1px solid #800928;
+        top: 0;
+        padding-right: 10px;
+    }
+    .subscribe-form button i {
+        color: #f5f5f5;
+        transform: rotate(-6deg);
+        padding-right: 10px;
+    }
+    
+    /***** email form from W3School ENDS *****/
+    
+    /***** GRID FOOTER CONTENT ENDS *****/
+    
+    
+    /***** COPYRIGHT AREA *****/
+    .copyright-area {
+        border-top: 2px solid #800928;
+        padding: 25px 0;
+        text-align: center;
+    }
+    
+    .copyright-area{
+        padding: 25px 0;
+        align-items: flex-end;
+        position: absolute;
+        bottom: 18px;
+        width: 100%;
+        text-align: center;
+        height: 10vh;
+    }
+    .copyright-text p {
+        font-family: text;
+        text-align: center;
+        font-size: 0.8em;
+        color: #101010;
+    }
+    .copyright-text a {
+        color: #990505;
+    }
+    
+    .col-4 {
+        font-size: 0.85em;
+    }
+    
+    .col-4 .mentions {
+        padding-top: 5px;
+    }
+    
+    .col-4, .col-5 {
+        text-align: center;
+    }
+    
+    .footer-menu {
+      width: 100%;
+    }
+    
+    .footer-menu ul {
+      padding: 0;
+      list-style: none;
+    }
+    
+    .footer-menu li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+    
+    .footer-menu li:hover a {
+      color: #990505;
+      text-decoration: underline;
+    }
+    
+    .footer-menu li a {
+      font-size: 14px;
+      color: #f5f5f5;
+      text-decoration: none;
+    }
+    
+    /****** CREDITS *******/
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        color: #f5f5f5;
+        font-family: text;
+    }
+
+    #myBtn{
+        cursor:pointer;
+        color: #f5f5f5;
+        font-family: titles;
+    }
+    
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #f5f5f5;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #800928;
+        width: 80%; /* Could be more or less, depending on screen size */
+        font-family: text;
+    }
+
+    .modal-content p {
+        padding-top: 15px;
+    }
+    
+    /* The Close Button */
+    .close {
+        color: #990505;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #101010;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /****** CREDITS ENDS *******/
+    
+    /***** COPYRIGHT AREA ENDS *****/
+
+}
